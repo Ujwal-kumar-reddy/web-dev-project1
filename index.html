@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Job Application Tracker</h1>
+        <p>Manage your job applications efficiently!</p>
+    </header>
+
+    <main>
+        <section class="kanban-board">
+            <div class="column" id="applied" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h2>Applied</h2>
+                <div class="job-list" id="applied-list"></div>
+            </div>
+
+            <div class="column" id="interview" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h2>Interview</h2>
+                <div class="job-list" id="interview-list"></div>
+            </div>
+
+            <div class="column" id="offer" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h2>Offer</h2>
+                <div class="job-list" id="offer-list"></div>
+            </div>
+        </section>
+
+        <section class="job-form">
+            <h2>Add Job Application</h2>
+            <input type="text" id="job-title" placeholder="Job Title">
+            <input type="text" id="company-name" placeholder="Company Name">
+            <button onclick="addJob()">Add Job</button>
+        </section>
+
+        <section class="statistics">
+            <h2>Statistics</h2>
+            <p>Applied: <span id="applied-count">0</span></p>
+            <p>Interview: <span id="interview-count">0</span></p>
+            <p>Offer: <span id="offer-count">0</span></p>
+        </section>
+    </main>
+
+</body>
+</html>
